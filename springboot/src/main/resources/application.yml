@@ -1,0 +1,41 @@
+spring:
+  # 数据源配置，连接数据库相关配置
+  datasource:
+    # 数据库连接驱动
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 数据库连接 url
+    # 如果报时区错误的话就加上时区设置：serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/school_news?useUnicode=true&characterEncoding=utf8&useSSL=false
+    # 数据库用户名
+    username: root
+    # 数据库密码
+    password: root
+
+  # 配置文件上传
+  servlet:
+    multipart:
+      max-file-size: 10MB # 单文件上传最大值
+      max-request-size: 100MB # 多文件上传最大值
+
+
+# mybatis plus 配置 扫描 xml 文件的位置
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+
+# 设置 Springboot 项目启动 (即服务器) 端口号
+server:
+  port: 8081
+
+#
+#shiro-redis:
+#  enabled: true
+#  redis-manager:
+#    host: 127.0.0.1:6379
+
+#zxc:
+#  jwt:
+#    # 加密密钥
+#    secret: f4e2e52034348f86b67cde581c0f9eb5
+#    # token 有效时长为7天，单位秒
+#    expire: 604800
+#    header: Authorization
